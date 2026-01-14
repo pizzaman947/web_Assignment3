@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Simple Blog</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
+        .blog-post { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+        input, textarea { padding: 8px; }
+        button { cursor: pointer; background: #007bff; color: white; border: none; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Blogging API Interface</h1>
+    
+    <form id="blogForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="author" placeholder="Author (optional)">
+        <textarea id="body" placeholder="Content" required></textarea>
+        <button type="submit">Publish Post</button>
+    </form>
+
+    <div id="posts"></div>
+
+  <script src="script.js"> </script>
+</body>
+</html>
