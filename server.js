@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const blogRoutes = require('./blog_routes');
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 app.use(express.static(__dirname)); 
 
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/blogDB';
+const mongoURI = process.env.MONGO_URI;
 mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
