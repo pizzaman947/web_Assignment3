@@ -12,7 +12,10 @@ mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
 app.use('/blogs', blogRoutes);
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
